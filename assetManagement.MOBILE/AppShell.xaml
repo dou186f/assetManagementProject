@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="assetManagement.MOBILE.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:assetManagement.MOBILE.Pages"
+    Title="assetManagement.MOBILE"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Home" Icon="home_icon.png">
+            <ShellContent 
+            Title="Main Menu"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        </Tab>
+        <Tab Title="Departments" Icon="department_icon.png">
+            <ShellContent 
+            Title="Departments"
+            ContentTemplate="{DataTemplate local:DepartmentPage}"
+            Route="DepartmentPage" />
+        </Tab>
+        <Tab Title="Categories" Icon="hammer_icon.png">
+            <ShellContent 
+            Title="Asset Categories"
+            ContentTemplate="{DataTemplate local:CategoryPage}"
+            Route="CategoryPage" />
+        </Tab>
+        <Tab Title="Settings" Icon="settings_icon.png">
+            <ShellContent 
+            Title="Ayarlar"
+            ContentTemplate="{DataTemplate local:SettingsPage}"
+            Route="SettingsPage" />
+        </Tab>
+    </TabBar>
+</Shell>

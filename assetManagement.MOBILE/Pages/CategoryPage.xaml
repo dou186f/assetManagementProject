@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="CategorPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="assetManagement.MOBILE.Pages.CategoryPage"
+             Title="">
+    <Grid Padding="24, 48, 24, 0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0"
+                HorizontalOptions="Center"
+                Margin="8"
+                StrokeThickness="0"
+                Padding="12, 0, 12, 12">
+            <Label FontSize="42"
+                   FontFamily="Uregu"
+                   FontAttributes="Bold"
+                   Text="CATEGORIES">
+            </Label>
+        </Border>
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Categories}" HorizontalOptions="Center" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="12" Margin="0,6" CornerRadius="4">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding BindingContext.OpenItemDetailCommand, Source={x:Reference CategorPage}}"
+                            CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                        
+                        <VerticalStackLayout Spacing="4">
+                            <Label FontFamily="Uregu">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding name}" FontSize="18"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

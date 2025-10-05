@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="assetManagement.MOBILE.Pages.AssetDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:assetManagement.MOBILE.ViewModels"
+    x:DataType="viewmodels:AssetDetailViewModel"
+    Title="">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="Auto,*">
+            <Label Text="Asset Detail"
+                   FontFamily="Uregu"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"/>
+        </Grid>
+    </Shell.TitleView>
+
+    <ScrollView Padding="0, 48, 0, 0">
+        <VerticalStackLayout Spacing="12">
+            <Label Text="{Binding Asset.name}"
+                   Padding="32, 0, 32, 0"
+                   FontSize="32"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold" />
+
+            <BoxView HeightRequest="3"
+                     WidthRequest="320"
+                     BackgroundColor="{AppThemeBinding Light=#141414, Dark=#2C2C2E}" />
+
+            <Label Margin="48, 12, 0, 0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Serial Number: " FontSize="18" FontAttributes="Bold"/>
+                        <Span Text="{Binding Asset.serialNumber}" FontSize="18"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <BoxView HeightRequest="1"
+                     WidthRequest="320"
+                     BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#2C2C2E}" />
+
+            <Label Margin="48, 0, 0, 0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Owner: " FontSize="18" FontAttributes="Bold"/>
+                        <Span Text="{Binding EmployeeName}" FontSize="18"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <BoxView HeightRequest="1"
+                     WidthRequest="320"
+                     BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#2C2C2E}" />
+
+            <Label Margin="48, 0, 0, 0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="ID: " FontSize="18" FontAttributes="Bold"/>
+                        <Span Text="{Binding Asset.id}" FontSize="18"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Button Text="Give To An Employee:" Command="{Binding ToggleAdderCommand}" CornerRadius="4" WidthRequest="180" FontFamily="Uregu"/>
+            
+            <Border Grid.Row="5"
+                Margin="8"
+                StrokeThickness="0"
+                IsVisible="{Binding IsAdderVisible}"
+                BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}"
+                Padding="12"
+                    WidthRequest="420">
+                <Frame Margin="32,12" Padding="16"
+                 HasShadow="False"
+                 BorderColor="{AppThemeBinding Light=#E5E5EA, Dark=#2C2C2E}"
+                 CornerRadius="4">
+                    <VerticalStackLayout Spacing="10">
+                        <Picker Title="Choose Employee:"
+                                HorizontalOptions="Center"
+                                ItemsSource="{Binding Employees}"
+                                ItemDisplayBinding="{Binding name}"
+                                SelectedItem="{Binding SelectedEmployee}" />
+
+                        <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                            <Button Text="Give To The Employee"
+                                    CornerRadius="4"
+                                    Command="{Binding AddToEmployeeCommand}" />
+
+                            <Button Text="Take From The Employee"
+                                    CornerRadius="4"
+                                    Command="{Binding RemoveFromEmployeeCommand}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

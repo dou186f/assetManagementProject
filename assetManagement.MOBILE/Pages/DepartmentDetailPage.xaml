@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="DepDetPage"
+    x:Class="assetManagement.MOBILE.Pages.DepartmentDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:assetManagement.MOBILE.ViewModels"
+    xmlns:models="clr-namespace:assetManagement.MOBILE.Models"
+    x:DataType="viewmodels:DepartmentDetailViewModel"
+    Title="">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="Auto,*">
+            <Label Text="Department Detail"
+                   FontFamily="Uregu"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"/>
+        </Grid>
+    </Shell.TitleView>
+
+    <ScrollView Padding="0, 48, 0, 0">
+        <VerticalStackLayout Spacing="12">
+            <Label Text="{Binding Department.name}"
+                   Padding="32, 0, 32, 0"
+                   FontSize="32"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold" />
+
+            <BoxView HeightRequest="3"
+                     WidthRequest="320"
+                     BackgroundColor="{AppThemeBinding Light=#141414, Dark=#2C2C2E}" />
+
+            <Label Margin="48, 12, 0, 0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="ID: " FontSize="18" FontAttributes="Bold"/>
+                        <Span Text="{Binding Department.id}" FontSize="18"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <BoxView HeightRequest="1"
+                     WidthRequest="320"
+                     BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#2C2C2E}" />
+
+            <Label HorizontalOptions="Center"
+                   Margin="0, 48, 0, 0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Employees working in this department: " FontSize="21" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <BoxView HeightRequest="1"
+                     WidthRequest="320"
+                     BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#2C2C2E}" />
+
+            <CollectionView ItemsSource="{Binding Employees}" Margin="0, 0, 0, 0" HorizontalOptions="Center">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:EmployeeModel">
+                        <Frame Padding="12" Margin="24, 24, 24, 0">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                            Command="{Binding BindingContext.OpenItemDetailCommand, Source={x:Reference DepDetPage}}"
+                            CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
+                            <VerticalStackLayout Spacing="4">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Name: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding name}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="ID: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding id}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Registry Number: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding regiNumber}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="Page" 
+    x:Class="assetManagement.MOBILE.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:assetManagement.MOBILE.ViewModels"
+    xmlns:dtos="clr-namespace:assetManagement.MOBILE.Dtos"
+    x:DataType="viewmodels:LibrarySearchViewModel"
+    Title="">
+
+    <Grid Padding="24, 24, 24, 0" RowSpacing="-1.1" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row="0"
+                HorizontalOptions="Center"
+                Margin="8"
+                StrokeThickness="0"
+                IsVisible="{Binding IsWelcomeVisible}"
+                Padding="12, 280, 12, 12">
+            <Label FontSize="42"
+                   FontFamily="Uregu"
+                   FontAttributes="Bold"
+                   Text="WELCOME">
+                
+            </Label>
+        </Border>
+        <SearchBar Grid.Row="1"
+                   Placeholder="Search"
+                   FontFamily="Uregu"
+                   Text="{Binding Query}"
+                   SearchCommand="{Binding SearchCommand}"
+                   CancelButtonColor="{DynamicResource Primary}"
+                   />
+
+        <BoxView Grid.Row="2"
+             HeightRequest="1"
+             BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#2C2C2E}" />
+
+        <HorizontalStackLayout  Grid.Row="3" Spacing="16" Margin="16" HorizontalOptions="Center">
+            <Button Text="Search" Command="{Binding SearchCommand}" CornerRadius="4" WidthRequest="120" FontFamily="Uregu"/>
+            <Button Text="Filter" Command="{Binding ToggleFilterCommand}" CornerRadius="4" WidthRequest="120" FontFamily="Uregu"/>
+        </HorizontalStackLayout>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+
+        <BoxView Grid.Row="4"
+             HeightRequest="1"
+             BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#2C2C2E}" />
+
+        <Border Grid.Row="5"
+                Margin="8"
+                StrokeThickness="0"
+                IsVisible="{Binding IsFilterVisible}"
+                BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}"
+                Padding="12">
+            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+                <Grid RowDefinitions="Auto,Auto">
+                    <Picker Title="Choose Class:"
+                            ItemsSource="{Binding TypeOptions}"
+                            SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
+                            ItemDisplayBinding="{Binding Display}"/>
+                </Grid>
+                <Button Grid.Column="2"
+                        CornerRadius="4"
+                        Text="Apply"
+                        FontFamily="Uregu"
+                        Command="{Binding ApplyFilterCommand}" />
+            </Grid>
+        </Border>
+
+        <BoxView Grid.Row="6"
+             HeightRequest="1"
+             IsVisible="{Binding IsFilterVisible}"
+             BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#2C2C2E}" />
+
+        <CollectionView Grid.Row="7" ItemsSource="{Binding Results}" Margin="0, 16, 0, 0" HorizontalOptions="Center">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="dtos:LibraryItemDto">
+                    <Frame Padding="12" Margin="0,6">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding BindingContext.OpenItemDetailCommand, Source={x:Reference Page}}"
+                            CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="{Binding Type}" FontAttributes="Bold" FontSize="16" FontFamily="Uregu"/>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Name: " FontAttributes="Bold"/>
+                                        <Span Text="{Binding EmployeeName}"/>
+                                        <Span Text="{Binding DepartmentName}"/>
+                                        <Span Text="{Binding AssetName}"/>
+                                        <Span Text="{Binding CategoryName}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="ID: " FontAttributes="Bold"/>
+                                        <Span Text="{Binding Id}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label IsVisible="False">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Type}" Value="Asset">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Serial Number: " FontAttributes="Bold"/>
+                                        <Span Text="{Binding SerialNum}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label IsVisible="False">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Type}" Value="Employee">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Registry Number: " FontAttributes="Bold"/>
+                                        <Span Text="{Binding RegiNum}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
