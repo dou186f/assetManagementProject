@@ -82,16 +82,18 @@ git clone https://github.com/dou186f/assetManagementProject.git
 
 ### 💡 Future Improvements
 
--Adding authentication (login system)
--Generating reports (PDF or Excel)
--Notifications for asset returns
+- Adding authentication (login system)
+- Generating reports (PDF or Excel)
+- Notifications for asset returns
 
 ---
 
 ### 🧑‍💻 Author
 
 Doğu Erbaş
+
 📧 [doguerbass@gmail.com]  
+
 💼 Developed as an internship project.
 
 ---
@@ -187,6 +189,8 @@ git clone https://github.com/dou186f/assetManagementProject.git
 ---
 ### 🧑‍💻 Yazar
 
-Doğu Erbaş
+Doğu Erbaş   
+
 📧 [doguerbass@gmail.com]  
+
 💼 Staj projesi olarak geliştirilmiştir.
