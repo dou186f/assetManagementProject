@@ -180,9 +180,9 @@ git clone https://github.com/dou186f/assetManagementProject.git
 
 ### 💡 Gelecek İyileştirmeler
 
--Kimlik doğrulama ekleme (login sistemi)
--Rapor oluşturma (PDF veya Excel)
--Varlık iade bildirimleri
+- Kimlik doğrulama ekleme (login sistemi)
+- Rapor oluşturma (PDF veya Excel)
+- Varlık iade bildirimleri
 
 ---
 ### 🧑‍💻 Yazar
