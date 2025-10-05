@@ -188,5 +188,5 @@ git clone https://github.com/dou186f/assetManagementProject.git
 ### 🧑‍💻 Yazar
 
 Doğu Erbaş
-📧 [doguerbass@gmail.com]
+📧 [doguerbass@gmail.com]  
 💼 Staj projesi olarak geliştirilmiştir.
