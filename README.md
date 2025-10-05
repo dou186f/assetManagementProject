@@ -41,14 +41,14 @@ The system includes both a .NET MAUI mobile app and an ASP.NET Core Web API back
 
 #### 📱 Mobile Interface
 
-![Mobile Screenshot 1](screenshots/MainPage.jpeg)
-![Mobile Screenshot 2](screenshots/MainPageSearch.jpeg)
-![Mobile Screenshot 3](screenshots/MainPageSearch2.jpeg)
-![Mobile Screenshot 4](screenshots/CategoryDetail.jpeg)
-![Mobile Screenshot 5](screenshots/DepartmentsPage.jpeg)
-![Mobile Screenshot 6](screenshots/DepartmentDetail.jpeg)
-![Mobile Screenshot 7](screenshots/ItemDetail.jpeg)
-![Mobile Screenshot 8](screenshots/ItemDetail2.jpeg)
+<img src="screenshots/MainPage.jpeg" alt="Mobil Görsel 1" width="300"/>
+<img src="screenshots/MainPageSearch.jpeg" alt="Mobil Görsel 2" width="300"/>
+<img src="screenshots/MainPageSearch2.jpeg" alt="Mobil Görsel 3" width="300"/>
+<img src="screenshots/CategoryDetail.jpeg" alt="Mobil Görsel 4" width="300"/>
+<img src="screenshots/DepartmentsPage.jpeg" alt="Mobil Görsel 5" width="300"/>
+<img src="screenshots/DepartmentDetail.jpeg" alt="Mobil Görsel 6" width="300"/>
+<img src="screenshots/ItemDetail.jpeg" alt="Mobil Görsel 7" width="300"/>
+<img src="screenshots/ItemDetail2.jpeg" alt="Mobil Görsel 8" width="300"/>
 
 ---
 
@@ -133,14 +133,14 @@ Sistem, bir .NET MAUI mobil uygulaması ve bir ASP.NET Core Web API backend içe
 
 #### 📱 Mobil Arayüz
 
-![Mobil Görsel 1](screenshots/MainPage.jpeg)
-![Mobil Görsel 2](screenshots/MainPageSearch.jpeg)
-![Mobil Görsel 3](screenshots/MainPageSearch2.jpeg)
-![Mobil Görsel 4](screenshots/CategoryDetail.jpeg)
-![Mobil Görsel 5](screenshots/DepartmentsPage.jpeg)
-![Mobil Görsel 6](screenshots/DepartmentDetail.jpeg)
-![Mobil Görsel 7](screenshots/ItemDetail.jpeg)
-![Mobil Görsel 8](screenshots/ItemDetail2.jpeg)
+<img src="screenshots/MainPage.jpeg" alt="Mobil Görsel 1" width="300"/>
+<img src="screenshots/MainPageSearch.jpeg" alt="Mobil Görsel 2" width="300"/>
+<img src="screenshots/MainPageSearch2.jpeg" alt="Mobil Görsel 3" width="300"/>
+<img src="screenshots/CategoryDetail.jpeg" alt="Mobil Görsel 4" width="300"/>
+<img src="screenshots/DepartmentsPage.jpeg" alt="Mobil Görsel 5" width="300"/>
+<img src="screenshots/DepartmentDetail.jpeg" alt="Mobil Görsel 6" width="300"/>
+<img src="screenshots/ItemDetail.jpeg" alt="Mobil Görsel 7" width="300"/>
+<img src="screenshots/ItemDetail2.jpeg" alt="Mobil Görsel 8" width="300"/>
 
 ---
 
