@@ -67,16 +67,16 @@ git clone https://github.com/dou186f/assetManagementProject.git
 ```
 
 2. **Note:**
--The API is currently under development and not connected to a live server.
--You can connect it to your own local server and test it using a simple dummy database.
+- The API is currently under development and not connected to a live server.
+- You can connect it to your own local server and test it using a simple dummy database.
 
 3. **Run the Mobile Application:**
--Open the project in your IDE (e.g., Visual Studio).
--Build and run the mobile application on an emulator or a real device.
+- Open the project in your IDE (e.g., Visual Studio).
+- Build and run the mobile application on an emulator or a real device.
 
 4. **Testing with the API locally:**
--Configure the API base URL in the mobile app to point to your local development server.
--Make sure the dummy database contains the necessary tables and sample data to test the app features.
+- Configure the API base URL in the mobile app to point to your local development server.
+- Make sure the dummy database contains the necessary tables and sample data to test the app features.
 
 ---
 
@@ -167,16 +167,16 @@ git clone https://github.com/dou186f/assetManagementProject.git
 ```
 
 2. **Not:**
--API şu anda geliştirme aşamasında ve canlı sunucuya bağlı değil.
--Kendi yerel sunucunuza bağlayarak basit bir dummy veritabanı ile test edebilirsiniz.
+- API şu anda geliştirme aşamasında ve canlı sunucuya bağlı değil.
+- Kendi yerel sunucunuza bağlayarak basit bir dummy veritabanı ile test edebilirsiniz.
 
 3. **Mobil Uygulamayı Çalıştırma:**
--Projeyi IDE’de (örn. Visual Studio) açın.
--Mobil uygulamayı emulator veya gerçek cihaz üzerinde çalıştırın.
+- Projeyi IDE’de (örn. Visual Studio) açın.
+- Mobil uygulamayı emulator veya gerçek cihaz üzerinde çalıştırın.
 
 4. **API’yi Yerelde Test Etme:**
--Mobil uygulamadaki API base URL’ini kendi yerel geliştirme sunucunuza yönlendirin.
--Dummy veritabanının gerekli tablolar ve örnek veriler içerdiğinden emin olun.
+- Mobil uygulamadaki API base URL’ini kendi yerel geliştirme sunucunuza yönlendirin.
+- Dummy veritabanının gerekli tablolar ve örnek veriler içerdiğinden emin olun.
 
 ---
 
